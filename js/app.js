@@ -1,5 +1,5 @@
 const arr = [];
-
+   //   Product Api
 const loadProducts = (url) => {
    fetch(url)
       .then((res) => res.json())
@@ -51,7 +51,7 @@ const showProducts = (products) => {
 };
 
 let count = 0;
-
+      //   Product price add in cart            
 const addToCart = (id, price) => {
    count = count + 1;
    updatePrice('price', price);
@@ -59,14 +59,14 @@ const addToCart = (id, price) => {
    updateTaxAndCharge();
    document.getElementById('total-Products').innerText = count;
 };
-
+            //   Product details in cart
 const showProductDetails = (product_id) => {
    console.log(product_id);
    fetch(`https://fakestoreapi.com/products/${product_id}`)
       .then((res) => res.json())
       .then((data) => showProductDetailsInModal(data));
 };
-
+            //  product  detail in ui
 const showProductDetailsInModal = (product_details) => {
    console.log(product_details);
    setInnerText('exampleModalLabel', product_details.title);
